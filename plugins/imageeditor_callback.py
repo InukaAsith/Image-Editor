@@ -1,5 +1,5 @@
 # By @TroJanzHEX
-from DaisyX.stuff.ImageEditor.edit_1 import (  # pylint:disable=import-error
+from DaisyX.Addons.ImageEditor.edit_1 import (  # pylint:disable=import-error
     bright,
     mix,
     black_white,
@@ -7,7 +7,7 @@ from DaisyX.stuff.ImageEditor.edit_1 import (  # pylint:disable=import-error
     normal_blur,
     box_blur,
 )
-from DaisyX.stuff.ImageEditor.edit_2 import (  # pylint:disable=import-error
+from DaisyX.Addons.ImageEditor.edit_2 import (  # pylint:disable=import-error
     circle_with_bg,
     circle_without_bg,
     sticker,
@@ -17,13 +17,13 @@ from DaisyX.stuff.ImageEditor.edit_2 import (  # pylint:disable=import-error
     pencil,
     cartoon,
 )
-from DaisyX.stuff.ImageEditor.edit_3 import (  # pylint:disable=import-error
+from DaisyX.Addons.ImageEditor.edit_3 import (  # pylint:disable=import-error
     green_border,
     blue_border,
     black_border,
     red_border,
 )
-from DaisyX.stuff.ImageEditor.edit_4 import (  # pylint:disable=import-error
+from DaisyX.Addons.ImageEditor.edit_4 import (  # pylint:disable=import-error
     rotate_90,
     rotate_180,
     rotate_270,
@@ -33,7 +33,7 @@ from DaisyX.stuff.ImageEditor.edit_4 import (  # pylint:disable=import-error
     removebg_plain,
     removebg_sticker,
 )
-from DaisyX.stuff.ImageEditor.edit_5 import (  # pylint:disable=import-error
+from DaisyX.Addons.ImageEditor.edit_5 import (  # pylint:disable=import-error
     normalglitch_1,
     normalglitch_2,
     normalglitch_3,
