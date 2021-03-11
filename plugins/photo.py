@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram import filters
 from DaisyX.services.pyrogram import pbot as Client
 
-@Client.on_message(filters.command(["edit", "editor"])& filters.photo)
+@Client.on_message(filters.command(["edit", "editor"]) & filters.photo)
 async def photo(client: Client, message: Message):
     try:
         await client.send_message(
