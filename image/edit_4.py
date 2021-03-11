@@ -6,12 +6,8 @@ import shutil
 import cv2
 import io
 import os
-
-
-if bool(os.environ.get("WEBHOOK", False)):
-    from sample_config import Config  # pylint:disable=import-error
-else:
-    from config import Config  # pylint:disable=import-error
+from DaisyX.config import get_str_key
+RemoveBG_API = get_str_key("RemoveBG_API", required=False)
 
 
 async def rotate_90(client, message):
@@ -235,7 +231,7 @@ async def inverted(client, message):
 
 async def removebg_plain(client, message):
     try:
-        if not (Config.RemoveBG_API == ""):
+        if not (RemoveBG_API == ""):
             userid = str(message.chat.id)
             if not os.path.isdir(f"./DOWNLOADS/{userid}"):
                 os.makedirs(f"./DOWNLOADS/{userid}")
@@ -254,7 +250,7 @@ async def removebg_plain(client, message):
                     "https://api.remove.bg/v1.0/removebg",
                     files={"image_file": open(download_location, "rb")},
                     data={"size": "auto"},
-                    headers={"X-Api-Key": Config.RemoveBG_API},
+                    headers={"X-Api-Key": RemoveBG_API},
                 )
                 if response.status_code == 200:
                     with open(f"{edit_img_loc}", "wb") as out:
@@ -295,7 +291,7 @@ async def removebg_plain(client, message):
 
 async def removebg_white(client, message):
     try:
-        if not (Config.RemoveBG_API == ""):
+        if not (RemoveBG_API == ""):
             userid = str(message.chat.id)
             if not os.path.isdir(f"./DOWNLOADS/{userid}"):
                 os.makedirs(f"./DOWNLOADS/{userid}")
@@ -355,7 +351,7 @@ async def removebg_white(client, message):
 
 async def removebg_sticker(client, message):
     try:
-        if not (Config.RemoveBG_API == ""):
+        if not (RemoveBG_API == ""):
             userid = str(message.chat.id)
             if not os.path.isdir(f"./DOWNLOADS/{userid}"):
                 os.makedirs(f"./DOWNLOADS/{userid}")
@@ -374,7 +370,7 @@ async def removebg_sticker(client, message):
                     "https://api.remove.bg/v1.0/removebg",
                     files={"image_file": open(download_location, "rb")},
                     data={"size": "auto"},
-                    headers={"X-Api-Key": Config.RemoveBG_API},
+                    headers={"X-Api-Key": RemoveBG_API},
                 )
                 if response.status_code == 200:
                     with open(f"{edit_img_loc}", "wb") as out:
