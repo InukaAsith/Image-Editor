@@ -1,7 +1,7 @@
 # By @TroJanzHEX
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from pyrogram import Client, filters
-
+from pyrogram import filters
+from DaisyX.services.pyrogram import pbot as Client
 
 @Client.on_message(filters.photo & filters.private)
 async def photo(client: Client, message: Message):
